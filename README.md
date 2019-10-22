@@ -26,6 +26,11 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
         : track splits used in paper
           
     ├─ all_tag_to_track_bin_matrix.p
+    # 157*19466의 genre_idx * track_idx binary vector
+    # ex) 0번 장르에 해당하는 음악이 2번 5번이고 1번장르에 해당하는 음악이 0번, 1번일때
+    # 0 0 1 0 0 1
+    # 1 1 0 0 0 0
+    # 와 같이 나타낼 수있다. 이것은 data_split_tag.py가 돌아가는과정에서 생성될 수 있다.
     ├─ tag_ids_in_key_order.p
     # 순서대로 저장된 tag_id 의 1 dimension list
     ├─ track_ids_in_key_order.p
@@ -42,6 +47,9 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
     ├─ ttr_ont_tag_1126_to_glove_dict.p
         : GloVe vector data 
           (filtered using Tagtraum genre ontology) 
+          # msd에 해당하는 1126개의 장르 키워드 ex)'00s','rock'등 만을 뽑아내어 dictionary형태로 저장함.
+          # ex) '00s': [0.1, 0.001, ...., 3.12]
+          #    'rock':[1.2, 0.1,-1.2, .... , 12.1]
   ├─ fma
     ├─ genre_id_to_inst_posneg40_cnt_norm_dict.p
     # 장르별로 사용된 악기의 갯수를 1*40 numpy array 로 표준화(평균0,표준편차1로 수렴)하여 dictionary형태로 저장

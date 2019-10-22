@@ -1,6 +1,6 @@
 import argparse
 
-from keras.optimizers import SGD
+from keras.optimizers import SGD    # stochastic gradient decent??
 from keras.callbacks import Callback,EarlyStopping,ModelCheckpoint,ReduceLROnPlateau,CSVLogger
 from keras import backend as K
 
@@ -13,11 +13,12 @@ def main():
 
     # Experiment info
     parser.add_argument('--exp_info', type=str, default='', help='')
-    parser.add_argument('--dataset', type=str, default='',
-                        help='dataset to work on : msd / fma')
+    parser.add_argument('--dataset', type=str, default='fma',
+                        help='dataset to work on : msd / fma')  # fma 가 되지 않을까?
 
     # Path settings
     parser.add_argument('--dir_mel', type=str, default='', help='')
+    #mel spctrogram directory?
 
     # Weight loading from trained
     parser.add_argument('--load_weights', type=str, default=None, help='')
@@ -81,7 +82,7 @@ def main():
     if args.dataset == 'msd':
         args.global_mel_mean = 0.2262
         args.global_mel_std = 0.2579
-    elif args.datset == 'fma':
+    elif args.dataset == 'fma':
         args.global_mel_mean = 0.2262
         args.global_mel_std = 0.2579
 
@@ -89,7 +90,7 @@ def main():
     data_tag_vector_path = os.path.join('data_tag_vector', args.dataset)
 
     # Load keys
-    tag_split_file_name = data_common_path + '/tag_key_split_' + str(args.tag_split_name) + '.p'
+    tag_split_file_name = data_common_path + '\\tag_key_split_' + str(args.tag_split_name) + '.p'
     print('using tag split file : ', tag_split_file_name)
 
     args.train_tag_keys, args.test_tag_keys = pickle.load(open(tag_split_file_name, 'rb'))
@@ -106,8 +107,7 @@ def main():
     '''
 
     continued_epoch = 0
-
-    if args.load_weights == None:
+    if args.load_weights == None: # 세이브데이터가 없으면
         exp_dir_info = 'exp_' + \
                        args.dataset + \
                        '_' + args.exp_info + \
@@ -155,7 +155,7 @@ def main():
     
     '''
 
-    ## Load data
+    ## Load data ,,, data_common_path : ..../fma/
     args.track_key_to_tag_binary_matrix = pickle.load(open(data_common_path + '/all_track_to_tag_bin_matrix.p', 'rb'))
     args.tag_key_to_track_binary_matrix = args.track_key_to_tag_binary_matrix.T
 
@@ -189,6 +189,7 @@ def main():
             print('using instrument pos/neg 40 dim normalized count vector')
             args.tag_id_to_w2v_vector_dict = pickle.load(
                 open(data_tag_vector_path + '/genre_id_to_inst_posneg40_cnt_norm_dict.p', 'rb'))
+            # data_tag_vector_path : .../fma
             args.tag_vec_dim = 40
 
         ## 2. pos / neg confidence 40-dim vector

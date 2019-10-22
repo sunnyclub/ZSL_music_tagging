@@ -72,7 +72,7 @@ def main():
     tag_key_to_track_binary_matrix = pickle.load(open(data_common_path + '/all_tag_to_track_bin_matrix.p', 'rb'))
     track_ids_in_order = pickle.load(open(data_common_path + '/track_ids_in_key_order.p', 'rb'))
 
-    all_track_keys = range(len(track_ids_in_order))
+    all_track_keys = range(len(track_ids_in_order))  # (0 ... 총 트랙 갯수)
     tag_split_file_name = data_common_path + '/tag_key_split_' + str(args.tag_split_name) + '.p'
 
     train_tag_keys, test_tag_keys = pickle.load(open(tag_split_file_name, 'rb'))
@@ -114,7 +114,7 @@ def main():
     _err_exceptional = []
     leftover_track_keys_C = []
     for tr_key in tqdm(all_track_keys):
-        if 1 in set(all_track_by_train_tag_matrix[tr_key]):
+        if 1 in set(all_track_by_train_tag_matrix[tr_key]):   #
             if 0 in set(all_track_by_train_tag_matrix[tr_key]):
                 filtered_track_keys_AB.append(all_track_keys[tr_key])
             else:
@@ -171,7 +171,7 @@ def main():
 
     filtered_track_keys_B = []
     leftover_track_keys_A = []
-    for tr_key in tqdm(filtered_track_keys_AB):
+    for tr_key in tqdm(filtered_track_keys_AB):  # progress bar
         # If 1 exists in both train and test tags, ..
         if 1 in set(all_track_by_train_tag_matrix[tr_key]):
             if 1 in set(all_track_by_test_tag_matrix[tr_key]):

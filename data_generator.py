@@ -37,7 +37,7 @@ class DataGenerator(keras.utils.Sequence):
 
         self.track_key_to_tag_binary_matrix = args.track_key_to_tag_binary_matrix
         self.tag_key_to_track_binary_matrix = args.tag_key_to_track_binary_matrix
-        self.tag_id_to_w2v_vector_dict  = args.tag_id_to_w2v_vector_dict
+        self.tag_id_to_w2v_vector_dict  = args.tag_id_tDo_w2v_vector_dict
 
         self.track_ids_in_key_order = args.track_ids_in_key_order
         self.tag_ids_in_key_order = args.tag_ids_in_key_order

@@ -26,7 +26,7 @@ def extract_audio_embed(args,
                         q):
 
     from keras.models import Model
-    from model import model_siamese_a2w_1fc
+    from .model import model_siamese_a2w_1fc
     import numpy as np
 
     tag_id_to_w2v_vector_dict = args.tag_id_to_w2v_vector_dict
@@ -104,9 +104,13 @@ def main():
         args.global_mel_std = 0.2579
         args.num_frame = 130
 
+        print(args.load_weights)
+
 
         if args.load_weights is not None:
+            print(args.load_weights.split('/'))
             exp_dir_info = args.load_weights.split('/')[1]
+
 
             args.dataset = args.load_weights.split('/')[1].split('_')[1]
             args.exp_info = args.load_weights.split('/')[1].split('_')[2]
@@ -272,8 +276,6 @@ def main():
     finally:
         for p in multiprocessing.active_children():
             p.terminate()
-
-
 
 if __name__ == '__main__':
     main()

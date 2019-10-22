@@ -133,7 +133,7 @@ if __name__ == '__main__':
                             help='path to dataset')
         parser.add_argument('--dir_mel', type=str, default='/media/iu/fma_large_mel/',
                             help='path to dataset')
-        parser.add_argument('--num_part', type=int, default=8, help='num of cpu')
+        parser.add_argument('--num_part', type=int, default=2, help='num of cpu')
 
         args = parser.parse_args()
 

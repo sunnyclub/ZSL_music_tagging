@@ -197,10 +197,14 @@ def load(filepath):
         tracks = pd.read_csv(filepath, index_col=0, header=[0, 1])
 
         COLUMNS = [('track', 'tags'), ('album', 'tags'), ('artist', 'tags'),
-                   ('track', 'genres'), ('track', 'genres_all')]
+                   ('track', 'genres'), ('track', 'genres_all')] # 멀티인덱싱에 대한 코드
+        # ex)  track
+        #      tags   genres   code
+        #      12      rock     10
+        # 이런식일 때 멀티인덱싱을 해놓은것이다.
         for column in COLUMNS:
             tracks[column] = tracks[column].map(ast.literal_eval)
-
+        # 뭔가 읽어들일떄 type값을 에러안나도록 변환시키는 코드
         COLUMNS = [('track', 'date_created'), ('track', 'date_recorded'),
                    ('album', 'date_created'), ('album', 'date_released'),
                    ('artist', 'date_created'), ('artist', 'active_year_begin'),

@@ -16,7 +16,8 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
   ├─ msd
     ├─ tag_key_split_TGSPP.p 
         : tag split used in paper
-        #tag_ids_in_key_order.p로부터 8:2 비율로 스플릿되어 [train, test]의 형태로 저장됨
+        # data_split_tag.py에 옵션(dataset, filename)을 주고 실행시키면 생성됨
+        # tag_ids_in_key_order.p로부터 8:2 비율로 스플릿되어 [train, test]의 형태로 저장됨
         # ex) [[162,11,24,26,3,121,16,75],[124,83]] 과 같이 저장된 pickle파일
     ├─ track_keys_AB_TRSPP_TGSPP.p 
     ├─ track_keys_A_TRSPP_TGSPP.p

@@ -32,9 +32,9 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
     # 1 1 0 0 0 0
     # 와 같이 나타낼 수있다. 이것은 data_split_tag.py가 돌아가는과정에서 생성될 수 있다.
     ├─ tag_ids_in_key_order.p
-    # 순서대로 저장된 tag_id 의 1 dimension list
+    # 순서대로 저장된 tag_id 의 1 dimension list(length:157)
     ├─ track_ids_in_key_order.p
-    # 순서대로 저장된 track_id의 1 dimension list
+    # 순서대로 저장된 track_id의 1 dimension list(length:19466)
     ├─ track_id_to_file_path_dict.p
     ├─ tag_key_to_id_dict.p 
        

@@ -26,7 +26,7 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
         : track splits used in paper
           
     ├─ all_tag_to_track_bin_matrix.p
-    # 157*19466의 genre_idx * track_idx binary vector
+    #  genre_idx * track_idx binary vector, msd에 대해서, fma에 대해서 따로만들어줘야함..
     # ex) 0번 장르에 해당하는 음악이 2번 5번이고 1번장르에 해당하는 음악이 0번, 1번일때
     # 0 0 1 0 0 1
     # 1 1 0 0 0 0

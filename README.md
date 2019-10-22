@@ -24,7 +24,9 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
           
     ├─ all_tag_to_track_bin_matrix.p
     ├─ tag_ids_in_key_order.p
+    # 순서대로 저장된 tag_id 의 1 dimension list
     ├─ track_ids_in_key_order.p
+    # 순서대로 저장된 track_id의 1 dimension list
     ├─ track_id_to_file_path_dict.p
     ├─ tag_key_to_id_dict.p 
        
@@ -39,7 +41,9 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
           (filtered using Tagtraum genre ontology) 
   ├─ fma
     ├─ genre_id_to_inst_posneg40_cnt_norm_dict.p
+    # 장르별로 사용된 악기의 갯수를 1*40 numpy array 로 표준화(평균0,표준편차1로 수렴)하여 dictionary형태로 저장
     ├─ genre_id_to_inst_posneg40_conf_norm_dict.p    
+    # 장르별로 사용된 악기의 신뢰도(confidence)를 1*40 numpy array 로 표준화(평균0,표준편차1로 수렴)하여 dictionary형태로 저장
         : Instrument vector data
 ```
 

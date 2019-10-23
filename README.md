@@ -32,6 +32,7 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
     # 1 1 0 0 0 0
     # 와 같이 나타낼 수있다. 이것은 data_prep_instrument_vector.py의 코드를 참고하면 쉽게 생성이 가능할듯 하지만, 
     # fma(157genres*19466tracks)와 msd(1126tags*406409tracks)에 대해서 각각 해줘야하므로 데이터셋에 대한 이해가 필수적이다..
+    # fma에 대한 matrix는 data_prep_instrument_vector.py 코드내에서 코드 추가를 통해 생성이 가능할 듯 
     ├─ tag_ids_in_key_order.p
     # openmic dataset으로부터 만들 수 있는 데이터
     # 순서대로 저장된 tag_id 의 1 dimension list(length:157)

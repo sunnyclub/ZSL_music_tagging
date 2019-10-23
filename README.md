@@ -53,8 +53,12 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
           #    'rock':[1.2, 0.1,-1.2, .... , 12.1]
   ├─ fma
     ├─ genre_id_to_inst_posneg40_cnt_norm_dict.p
+    # pre: track_ids_in_key_order.p, tag_ids_in_key_order.p 
+    # data_prep_instrument_vector.py에 의해 자동으로 생성
     # 장르별로 사용된 악기의 갯수를 1*40 numpy array 로 표준화(평균0,표준편차1로 수렴)하여 dictionary형태로 저장
     ├─ genre_id_to_inst_posneg40_conf_norm_dict.p    
+    # pre: track_ids_in_key_order.p, tag_ids_in_key_order.p 
+    # data_prep_instrument_vector.py에 의해 자동으로 생성
     # 장르별로 사용된 악기의 신뢰도(confidence)를 1*40 numpy array 로 표준화(평균0,표준편차1로 수렴)하여 dictionary형태로 저장
         : Instrument vector data
 ```

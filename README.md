@@ -30,7 +30,8 @@ _(\* : equally contributed authors)_ Accepted at [ISMIR 2019](https://ismir2019.
     # ex) 0번 장르에 해당하는 음악이 2번 5번이고 1번장르에 해당하는 음악이 0번, 1번일때
     # 0 0 1 0 0 1
     # 1 1 0 0 0 0
-    # 와 같이 나타낼 수있다. 이것은 data_split_tag.py가 돌아가는과정에서 생성될 수 있다.
+    # 와 같이 나타낼 수있다. 이것은 data_prep_instrument_vector.py의 코드를 참고하면 쉽게 생성이 가능할듯 하지만, 
+    # fma와 msd에 대해서 각각 해줘야하므로 데이터셋에 대한 이해가 필수적이다..
     ├─ tag_ids_in_key_order.p
     # 순서대로 저장된 tag_id 의 1 dimension list(length:157)
     ├─ track_ids_in_key_order.p
